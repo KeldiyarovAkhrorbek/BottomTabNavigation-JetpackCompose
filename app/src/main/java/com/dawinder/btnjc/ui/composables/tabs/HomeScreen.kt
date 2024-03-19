@@ -98,7 +98,7 @@ fun HomeScreen() {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "Akhrorbek Keldiyarov",
+                        text = "NAME",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center
                     )
