@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace = "com.dawinder.btnjc"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         applicationId = "com.dawinder.btnjc"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -80,4 +80,6 @@ dependencies {
     // Debugging Tools
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+
+    implementation("io.coil-kt:coil-compose:2.5.0")
 }

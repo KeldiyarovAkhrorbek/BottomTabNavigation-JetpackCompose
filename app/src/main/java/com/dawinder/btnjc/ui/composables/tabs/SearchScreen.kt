@@ -6,10 +6,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.sp
 import com.dawinder.btnjc.R
-import com.dawinder.btnjc.ui.theme.md_theme_dark_secondaryContainer
-import com.dawinder.btnjc.ui.theme.typography
 
 /**
  * Composable function that represents the search screen of the application.
@@ -18,9 +18,8 @@ import com.dawinder.btnjc.ui.theme.typography
 fun SearchScreen() {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(
-            text = stringResource(id = R.string.search),
-            style = typography.titleLarge,
-            color = md_theme_dark_secondaryContainer
+            text = "This page is not implemented yet!",
+            fontSize = 25.sp
         )
     }
 }
