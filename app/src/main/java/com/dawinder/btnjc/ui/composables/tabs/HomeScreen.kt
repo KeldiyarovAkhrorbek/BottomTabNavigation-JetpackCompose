@@ -1,7 +1,13 @@
 package com.dawinder.btnjc.ui.composables.tabs
 
+import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,6 +30,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -40,6 +47,17 @@ import com.dawinder.btnjc.R
 
 @Composable
 fun HomeScreen() {
+
+    val infiniteTransition = rememberInfiniteTransition()
+    val borderColor by infiniteTransition.animateColor(
+        initialValue = Color.Gray,
+        targetValue = Color.Red,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1000),
+            repeatMode = RepeatMode.Reverse
+        )
+    )
+
     var skills = mutableListOf(
         "Java",
         "Kotlin",
@@ -86,10 +104,12 @@ fun HomeScreen() {
                 horizontalArrangement = Arrangement.Center,
             ) {
                 Image(
-                    painterResource(R.drawable.ic_launcher_background),
+                    painterResource(R.drawable.sss),
                     contentDescription = "",
                     contentScale = ContentScale.Crop,
-                    modifier = Modifier.size(150.dp)
+                    modifier = Modifier
+                        .size(150.dp)
+                        .border(3.dp, borderColor)
                 )
                 Spacer(modifier = Modifier.width(width = 30.dp))
                 Column(
@@ -98,7 +118,7 @@ fun HomeScreen() {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "NAME",
+                        text = "Akhrorbek Keldiyarov",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center
                     )
